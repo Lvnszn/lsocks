@@ -1,8 +1,8 @@
 package cipher
 
 type Cipher struct {
-	encodePassword *Password
-	decodePassword *Password
+	encodePassword *password
+	decodePassword *password
 }
 
 func (c *Cipher) encode(bs []byte) {
@@ -18,8 +18,8 @@ func (c *Cipher) decode(bs []byte) {
 }
 
 // NewCipher new cipher struct for encode/decode msg
-func NewCipher(encodePassword *Password) *Cipher {
-	decodePassword := new(Password)
+func NewCipher(encodePassword *password) *Cipher {
+	decodePassword := new(password)
 	for i, v := range encodePassword {
 		encodePassword[i] = v
 		decodePassword[v] = byte(i)
