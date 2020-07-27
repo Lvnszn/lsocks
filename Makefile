@@ -1,4 +1,6 @@
 GOCMD=go
 
-build:
-	$(GOCMD) build cmd/main.go -o socks
+server:
+	$(GOCMD) run cmd/server/main.go
+client:
+	$(GOCMD) run cmd/client/main.go
